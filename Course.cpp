@@ -13,10 +13,10 @@ public:
    string end;
    //default constructor
    Course(){
-      prefix = "none";
+      prefix = "Add Course Prefix";
       courseNum = 000;
-      start = "00:00";
-      end = "00:00";
+      start = "";
+      end = "";
       //days = {"M", "T", "W", "Th", "F"};
    } 
    //actual constructor
@@ -27,12 +27,47 @@ public:
       end = e;
       //days = d;
    }
+public:
+   //setter methods
+   void setPre(string p){
+      prefix = p;
+   }
+   void setNum(int n){
+      courseNum = n;
+   }
+   void setStart(string s){
+      start = s;
+   }
+   void setEnd(string e){
+      end = e;
+   }
+   //getter methods
+   string getPre(){
+      return prefix;
+   }
+   int getNum(){
+      return courseNum;
+   }
+   string getStart(){
+      return start;
+   }
+   string getEnd(){
+      return end;
+   }
+
    void stringFunction(){
-      cout << prefix << " " << courseNum << "\n" << "Start Time: " << start << "\nEnd Time: " << end;// << //"\nDays: " << days;
+      cout << prefix << " " << courseNum << "\n" << "Start Time: " << start << "\nEnd Time: " << end << endl;// << //"\nDays: " << days;
    }
 };
 
 int main(){
    Course c("STAT", 118, "10:00am", "10:50am");  // {"Monday", "Wednesday", "Friday"}
    c.stringFunction();
+   
+   Course c2;
+   c2.setPre("STAT");
+   c2.setNum(228);
+   c2.setStart("11:00am");
+   c2.setEnd("11:50am");
+   c2.stringFunction();
 }
