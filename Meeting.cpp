@@ -54,15 +54,3 @@ public:
    }
 };
 
-int main(){
-   Meeting m;
-   //cout << m.title << m.start << m.end << m.category;
-   m.setTitle("Meeting with advisor");
-   m.setCat("academic");
-   m.setStart("2:00pm");
-   m.setEnd("2:30pm");
-   m.stringFunction();
-   
-   Meeting myMeet("Project meeting", "asa data challenge", "12:00pm", "1:00pm");
-   myMeet.stringFunction();
-}
