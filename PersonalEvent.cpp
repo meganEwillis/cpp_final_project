@@ -54,12 +54,3 @@ public:
       cout << title << "\nTime: " << time << "\nNotes: " << descript << "; " << loc << endl;
    }
 };
-
-int main(){
-   PersonalEvent p;
-   p.setTitle("Dr.Appointment");
-   p.setTime("10:00 am");
-   p.setDes("w/ Dr. Bauer");
-   p.setLoc("@ 300 Longwood, floor 2");
-   p.stringFunction();
-}
