@@ -11,13 +11,14 @@ public:
    int courseNum;
    string start;
    string end;
+   //string days[7];
    //default constructor
    Course(){
       prefix = "Add Course Prefix";
       courseNum = 000;
       start = "";
       end = "";
-      //days = {"M", "T", "W", "Th", "F"};
+      //days = {"M", "T", "W", "Th", "F", "Sat", "Sun"};
    } 
    //actual constructor
    Course(string p, int c, string s, string e){  // string d
@@ -25,6 +26,7 @@ public:
       courseNum = c;
       start = s;
       end = e;
+      //days = d[];
       //days = d;
    }
 public:
@@ -41,6 +43,7 @@ public:
    void setEnd(string e){
       end = e;
    }
+
    //getter methods
    string getPre(){
       return prefix;
@@ -56,6 +59,8 @@ public:
    }
 
    void stringFunction(){
-      cout << prefix << " " << courseNum << "\n" << "Start Time: " << start << "\nEnd Time: " << end << endl;// << //"\nDays: " << days;
+      if (prefix != "Add Course Prefix" && courseNum != 000 && start != "" && end != ""){
+         cout << prefix << " " << courseNum << "\n" << "Start Time: " << start << "\nEnd Time: " << end << endl;// << //"\nDays: " << days;
+      }
    }
 };

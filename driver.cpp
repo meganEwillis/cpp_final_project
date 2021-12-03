@@ -6,7 +6,7 @@
 #include <string>
 using namespace std;
 
-void createCourse(){
+Course createCourse(){
    Course c;
    
    string pre;
@@ -28,10 +28,12 @@ void createCourse(){
    c.setStart(start);
    c.setEnd(end);
    
-   c.stringFunction();
+   //c.stringFunction();
+   
+   return(c);
 }
 
-void createMeeting(){
+Meeting createMeeting(){
    Meeting m;
    
    string title;
@@ -55,9 +57,11 @@ void createMeeting(){
    m.setCat(cat);
    
    m.stringFunction();
+   
+   return(m);
 }
 
-void createEvent(){
+PersonalEvent createEvent(){
    PersonalEvent p;
    
    string title;
@@ -84,29 +88,47 @@ void createEvent(){
    p.setLoc(loc);
    
    p.stringFunction();
+   
+   return(p);
 }
 
 int main(){
+   Course course;
+   Meeting meeting;
+   PersonalEvent personal;
    string newEvent;
+   Course c[20];
+   int iter = 0;
    cout << "Would you like to add a new event to your planner?(y/n) " << endl;
    cin >> newEvent;
    while (newEvent == "y"){
+      cout << "iter value: " << iter << endl;
       int eventType;
       cout << "Would you like to add:\n\ta Course: enter 1\n\ta Meeting: enter 2\n\ta Personal Event: enter 3\nexit: enter 0" << endl; 
       cin >> eventType;
       if (eventType == 1){
-         createCourse();
+         course = createCourse();
+         c[iter] = course;
+         iter++;
       }
       else if (eventType == 2){
-         createMeeting();
+         meeting = createMeeting();
       }
       else if (eventType == 3){
-         createEvent();
+         personal = createEvent();
       }
       else{
          newEvent = "n";
       }
+      //cout << &course << endl;   this is the same location each time
+      //cout << meeting << endl;
+      //cout personal << endl;
    }
+   cout << "------------------" << endl;
+   for(int i = 0; i<iter; i++){
+      c[i].stringFunction();   //this is printing the last item 2 times
+      cout << i << endl;
+   } 
 }
 
 //TO DO next: user input (research, and figure it out)

@@ -51,6 +51,17 @@ public:
       return loc;
    }
    void stringFunction(){
-      cout << title << "\nTime: " << time << "\nNotes: " << descript << "; " << loc << endl;
+      if(descript != "" && loc != ""){
+         cout << title << "\nTime: " << time << "\nNotes: " << descript << "; " << loc << endl;
+      }
+      else if(descript == "" && loc == ""){
+         cout << title << "\nTime: " << time << endl;
+      }
+      else if(descript == "" && loc != ""){
+         cout << title << "\nTime: " << time << "\nNotes: " << loc << endl;
+      }
+      else{
+         cout << title << "\nTime: " << time << "\nNotes: " << descript << endl;
+      }
    }
 };
